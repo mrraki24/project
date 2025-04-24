@@ -1,0 +1,522 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this to your header's height */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px 0px 32px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+/* General Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0a3d62;
+    padding: 8px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffc107;
+}
+
+/* Mega Menu (Centered) */
+.mega-menu {
+    display: none;
+    margin-top: 28px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Display Mega Menu on Hover */
+.dropdown:hover .mega-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Mega Menu Columns */
+.mega-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.mega-column h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #424242;
+    position: relative;
+}
+
+/* Mega Menu Links */
+.mega-column a {
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #757575;
+    transition: 0.3s;
+}
+
+.mega-column a:hover {
+    color: #0a3d62;
+}
+
+li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+}
+
+li a i {
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .mega-menu {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+/* Mega Menu (Initially Hidden) */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); /* Start slightly above */
+    background: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Display Mega Menu with Slide Effect */
+.dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Moves it down smoothly */
+}
+
+.cta-button {
+    background-color: #ffc107;
+    color: #0a3d62;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section-title {
+margin-bottom: 20px;
+color: #0a3d62;
+}
+
+.hero {
+position: relative;
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+overflow: hidden;
+}
+
+.hero-video {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transform: translate(-50%, -50%);
+z-index: -1;
+}
+
+.hero-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+z-index: 0;
+}
+
+.hero-content {
+position: relative;
+z-index: 1;
+}
+
+.hero h1 {
+font-size: 48px;
+font-weight: bold;
+text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+margin-bottom: 10px;
+}
+
+.hero p {
+font-size: 24px;
+font-weight: 400;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero .cta-button {
+background-color: #ffc107;
+color: #0a3d62;
+padding: 12px 24px;
+font-size: 16px;
+font-weight: bold;
+text-decoration: none;
+border-radius: 5px;
+transition: background 0.3s ease-in-out;
+display: inline-block;
+margin-top: 20px;
+z-index: 2;
+}
+
+.hero .cta-button:hover {
+background-color: #e0a800;
+}
+
+.about {
+    padding: 50px;
+    background-color: #ffffff;
+    text-align: center;
+    
+}
+.about p {
+    font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.services, .team {
+    padding: 50px 20px;
+    text-align: center;
+
+}
+.service-grid, .team-grid, .testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service, .team-member, .testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover, .team-member:hover, .testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio {
+width: 100%; /* Full width */
+height: auto; /* Adjust height based on content */
+padding: 50px 20px;
+background-color: #ffffff;
+text-align: center;
+}
+
+.portfolio h2 {
+margin-bottom: 20px;
+color: #0a3d62;
+text-align: center;
+}
+
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+justify-content: center;
+padding: 20px;
+max-width: 1200px; /* Set max width for better alignment */
+margin: 0 auto; /* Center the grid */
+}
+
+.portfolio-item {
+position: relative;
+width: 100%; /* Adjusts to container width */
+height: 316px; /* Fixed height for uniformity */
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out;
+background-color: white;
+}
+
+
+.portfolio-item img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Ensures image fits properly */
+border-radius: 10px;
+transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover {
+transform: translateY(-10px);
+}
+
+.portfolio-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+border-radius: 10px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+opacity: 1;
+}
+
+.portfolio-overlay h3 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.portfolio-overlay p {
+font-size: 14px;
+max-width: 80%;
+text-align: center;
+}
+
+.portfolio-overlay a {
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #ffc107;
+color: #0a3d62;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.portfolio-overlay a:hover {
+background-color: #e0a800;
+}
+
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff
+    }
+
+.service img, .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.contact {
+    background-color: #ffffff; /* White background */
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 48px auto 48px auto;
+}
+
+.contact h2 {
+        color: #0a3d62; /* Brand color for heading */
+ }
+
+.contact p {
+        color: #333; /* Dark text for contrast */
+ }
+
+.contact form {
+        display: flex;
+        flex-direction: column;
+        max-width: auto;
+        margin: auto;
+}
+
+        .contact form input,
+        .contact form textarea,
+        .contact form button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+			width: 60%;
+        }
+
+        .contact form button {
+            background-color: #0a3d62; /* Brand color for button */
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+            .contact form button:hover {
+                background-color: #07568d; /* Slightly darker shade on hover */
+            }
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+.slider {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+    padding: 48px;
+}
+.testimonial {
+    flex: 0 0 12%;
+    padding: 28px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    margin: 0 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, background-color 0.3s ease;
+    min-width: 250px;
+    opacity: 0.9;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.slider-container:hover .slider {
+    animation-play-state: paused;
+}
+.testimonial:hover {
+    transform: scale(1.03);
+    background: White;
+}
+footer {
+background-color: #0b0d1f;
+color: #ffffff;
+text-align: center;
+padding: 20px;
+}
+
+.footer-logo {
+width: 48px; /* Adjust size as needed */
+height: auto;
+margin-bottom: 10px;
+}	
+
+.social-icons {
+    margin-top: 12px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00aced; /* Optional: Change to brand color on hover */
+}
+
